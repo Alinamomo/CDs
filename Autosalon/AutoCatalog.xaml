@@ -1,0 +1,40 @@
+﻿<Window x:Class="Autosalon.AutoCatalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:control ="clr-namespace:Autosalon.Controls"
+        xmlns:local="clr-namespace:Autosalon"
+        mc:Ignorable="d"
+        Title="AutoCatalog" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.973"/>
+                <GradientStop Color="White" Offset="0.315"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="exit2b" Content="Назад" HorizontalAlignment="Left" Margin="597,20,0,0" VerticalAlignment="Top" Width="156" Height="55" FontFamily="Candara Light" FontSize="36" Background="#002E4C21" BorderBrush="#FFBCE3EE" Foreground="#FF4B4B4B" Command="{Binding BackToOffCommand}"/>
+
+            <Label Content="Модельный ряд" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="64" Width="493" FontFamily="Candara Light" FontSize="48" Background="#00313231" BorderBrush="#DD4C3131" Foreground="#DD221D1D"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <ItemsControl ItemsSource="{Binding ModelRanges}" Background="Transparent">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="2"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            
+                <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <control:ModelRangeControl Background="Transparent" Margin="10"></control:ModelRangeControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>

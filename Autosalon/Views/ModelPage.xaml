@@ -1,0 +1,35 @@
+﻿<Window x:Class="Autosalon.Views.ModelPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:control ="clr-namespace:Autosalon.Controls"
+        xmlns:local="clr-namespace:Autosalon.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ModelPage" Height="450" Width="800">
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Комплектации" HorizontalAlignment="Left" Height="64" Margin="44,13,0,0" VerticalAlignment="Top" Width="382" FontFamily="Century Gothic" FontSize="48"/>
+
+        <Button Grid.Row="0" Content="Назад" HorizontalAlignment="Left" Margin="618,27,0,0" VerticalAlignment="Top" Width="131" RenderTransformOrigin="0.379,0.281" Background="Transparent" BorderBrush="#FF566876" Height="37" FontSize="24" FontFamily="Century Gothic" Foreground="#FF2D3840" Command="{Binding ToModelRangePageCommand}"/>
+
+        <Button Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+                Command="{Binding ChangeConstructionCommand}"
+                CommandParameter="-1">
+            <materialDesign:PackIcon Kind="ArrowLeft"></materialDesign:PackIcon>
+        </Button>
+
+        <Button Grid.Row="1" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+                Command="{Binding ChangeConstructionCommand}"
+                CommandParameter="1">
+            <materialDesign:PackIcon Kind="ArrowRight"></materialDesign:PackIcon>
+        </Button>
+
+        <control:ConstructionControl Grid.Row="1" HorizontalAlignment="Center" DataContext="{Binding CurrentConstruction}"></control:ConstructionControl>        
+    </Grid>
+</Window>

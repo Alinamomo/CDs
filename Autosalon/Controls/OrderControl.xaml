@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Autosalon.Controls.OrderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Autosalon.Controls"
+             xmlns:materialDesignMahApps="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+        <Grid Background="Transparent">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10" FontWeight="Bold" Text="Клиент: "></TextBlock>
+                    <TextBlock FontSize="20" Margin="10" Text="{Binding ClientName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10" FontWeight="Bold" Text="Модель: "></TextBlock>
+                    <TextBlock FontSize="20" Margin="10" Text="{Binding ModelName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10" FontWeight="Bold" Text="Аксессуар: "></TextBlock>
+                    <TextBlock FontSize="20" Margin="10" Text="{Binding AccessName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10" FontWeight="Bold" Text="Сумма: "></TextBlock>
+                    <TextBlock  FontSize="20" Margin="10" Text="{Binding PriceString}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10" FontWeight="Bold" Text="Оформил: "></TextBlock>
+                    <TextBlock FontSize="20" Margin="10" Text="{Binding AdminString}"></TextBlock>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10, 20, 0, 0" FontWeight="Bold" Text="Статус: "></TextBlock>
+                    <TextBlock FontSize="20" Margin="20" Text="{Binding StatusString}"></TextBlock>
+                    <Button
+                            IsEnabled="{Binding IsActive}"
+                            Margin="10" Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" Background="Green" BorderBrush="Green"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CompleteOrderCommand}"
+                            CommandParameter="{Binding Id}">
+                        <materialDesignMahApps:PackIcon Kind="Check"/>
+                    </Button>
+                    <Button 
+                            IsEnabled="{Binding IsActive}"
+                            Margin="10" Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" Background="Red" BorderBrush="Red"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CancelOrderCommand}"
+                            CommandParameter="{Binding Id}">
+                        <materialDesignMahApps:PackIcon Kind="Cancel"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

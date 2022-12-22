@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43efcfdd7dfe458fab026d475249518a" Name="Diagram1">
+        <EntityTypeShape EntityType="CarDealershipModel.Accesouries" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Administration" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Client" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Colour" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Construction" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Model" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.ModelRange" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Order" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Product" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.Status" Width="1.5" PointX="7.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarDealershipModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="CarDealershipModel.FK_Product_Accesouries" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Order_Administration" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Order_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Construction_Colour" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Construction_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Product_Construction" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Model_ModelRange" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Order_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CarDealershipModel.FK_Order_Status" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
