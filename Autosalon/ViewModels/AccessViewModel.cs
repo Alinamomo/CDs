@@ -30,11 +30,8 @@ namespace Autosalon.ViewModels
 
             Accessories = new ObservableCollection<AccessItem>();
 
-            //Accessories.Add(new AccessItem { Name = "Chlen", PriceText = "от паха до колен", AccessImageSource=null });
-            //Accessories.Add(new AccessItem { Name = "Penis", PriceText = "отъебал", AccessImageSource = null });
-            //Accessories.Add(new AccessItem { Name = "Hui", PriceText = "sosi", AccessImageSource = null });
-            //Accessories.Add(new AccessItem { Name = "Elda", PriceText = "dlya tebya", AccessImageSource = null });
-
+           
+            
             FillAccesses();
         }
 
